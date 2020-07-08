@@ -17,7 +17,7 @@ public class Main {
 	
 		
 		
-		TestATM atm = new TestATM(acc);
+		CalcATM atm = new CalcATM(acc);
 		
 		int deposit = 2500;//入金額
 		System.out.println("Start deposit: " +deposit + " JPY");
@@ -26,12 +26,12 @@ public class Main {
 		  	 
 		int withdraw = 1100;
 		System.out.println("Start withdraw: " +withdraw + " JPY");
-		atm.withdraw(withdraw);
+		atm.withdraw(withdraw,false);
 		atm.showCurrentBalance();
 		
 		withdraw = 1000000000;
 		System.out.println("Start withdraw: " + withdraw + " JPY");
-		atm.withdraw(withdraw);
+		atm.withdraw(withdraw,true);
 		atm.showCurrentBalance();
 		
 		

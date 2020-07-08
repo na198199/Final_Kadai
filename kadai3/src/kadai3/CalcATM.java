@@ -1,11 +1,11 @@
 
 package kadai3;
 
-public class TestATM {
+public class CalcATM {
 
 	private MyAccount m_myAcc;// 口座クラス
 
-	public TestATM(MyAccount ma) {// ここでm_myAccを初期化
+	public CalcATM(MyAccount ma) {// ここでm_myAccを初期化
 		this.m_myAcc = ma;
 	}
 
@@ -34,7 +34,7 @@ public class TestATM {
 		
 	}
 
-	public void withdraw(int cash_want) {
+	public void withdraw(int cash_want, boolean bill) {
 		if(kozeni(cash_want)==true) {
 
 		if (cash_want > m_myAcc.getBalance()) {
@@ -42,11 +42,25 @@ public class TestATM {
 			System.out.println("Your current balance is: " + m_myAcc.getBalance() + " JPY");
 
 		} else if (cash_want < m_myAcc.getBalance()) {
-			m_myAcc.setBalance(m_myAcc.getBalance() - cash_want);
-
+			if(cash_want>=10000) {
+				int th;
+				int tenth;
+				if(bill==true) {
+					tenth=cash_want/10000;
+					th=cash_want%10000/1000;
+					System.out.println("万円札で出金");
+					System.out.println("一万円札:"+tenth+"枚と千円札"+th+"枚");
+				}else {
+					th=cash_want/1000;
+					System.out.println("千円札で出金");
+					System.out.println("千円札"+th+"枚");
+				}
+				m_myAcc.setBalance(m_myAcc.getBalance() - cash_want);
+			}else {
+				m_myAcc.setBalance(m_myAcc.getBalance() - cash_want);
+			}
 		}
 		}
-		
 
 	}
 	
