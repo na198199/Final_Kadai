@@ -10,11 +10,16 @@ public class TestATM {
 	}
 
 	public void deposit(int cash_deposit) {// 入金
+		
+		if(kozeni(cash_deposit) == true) {
+		
 		if (cash_deposit > 300000) {
 			System.out.println("金額が大きすぎます。");
 		} else {
 			m_myAcc.setBalance(m_myAcc.getBalance() + cash_deposit);
 		}
+		}
+		
 	}
 	
 	public boolean kozeni(int cash) {
@@ -44,6 +49,7 @@ public class TestATM {
 		
 
 	}
+	
 
 	public void showCurrentBalance() {
 		System.out.println("Current Balance： " + m_myAcc.getBalance() + " JPY");
