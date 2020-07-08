@@ -6,13 +6,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-@RunWith(JUnit4.class)
+
 public class TestCalcATM {
 
-//	@Test
-//	public void test() {
-//		fail("Not yet implemented");
-//	}
 	
 	@Test
 	public void testDeposit() {
@@ -26,18 +22,7 @@ public class TestCalcATM {
 		int actual = ma.getBalance();
 		assertThat(actual, is(expected));
 	}
-	@Test
-	public boolean kozeni(int cash) {
-		if(cash%1000 != 0 ) {
-			
-			System.out.println("小銭は受け付けません");
-			return false;		
-		}
-		else {
-			return true;
-		}
-		
-	}
+
 	@Test
 	public void testWithdraw() {
 		
@@ -54,7 +39,7 @@ public class TestCalcATM {
 	}
 	
 	@Test
-	public void TestWithdraw() {
+	public void testWithdraw2() {
 		
 		MyAccount ma = new MyAccount();
 		ma.setBalance(100000);
