@@ -16,8 +16,21 @@ public class TestATM {
 			m_myAcc.setBalance(m_myAcc.getBalance() + cash_deposit);
 		}
 	}
+	
+	public boolean kozeni(int cash) {
+		if(cash%1000 != 0 ) {
+			
+			System.out.println("小銭は受け付けません");
+			return false;		
+		}
+		else {
+			return true;
+		}
+		
+	}
 
 	public void withdraw(int cash_want) {
+		if(kozeni(cash_want)==true) {
 
 		if (cash_want > m_myAcc.getBalance()) {
 			System.out.println("Can’t withdraw: " + m_myAcc.getBalance() + " JPY");
@@ -27,6 +40,8 @@ public class TestATM {
 			m_myAcc.setBalance(m_myAcc.getBalance() - cash_want);
 
 		}
+		}
+		
 
 	}
 
