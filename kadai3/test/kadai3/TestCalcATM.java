@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class ExamTestATM {
+public class TestCalcATM {
 
 //	@Test
 //	public void test() {
@@ -18,7 +18,7 @@ public class ExamTestATM {
 	public void testDeposit() {
 		MyAccount ma = new MyAccount();
 		ma.setBalance(0);
-		TestATM ta = new TestATM(ma);
+		CalcATM ta = new CalcATM(ma);
 		
 		int expected = 1000;
 		//計算
@@ -43,11 +43,11 @@ public class ExamTestATM {
 		
 		MyAccount ma = new MyAccount();
 		ma.setBalance(100000);
-		TestATM ta = new TestATM(ma);
+		CalcATM ta = new CalcATM(ma);
 		
 		int expected = 90000;//答え
 		//計算
-		ta.withdraw(10000);
+		ta.withdraw(10000,false);
 		int actual = ma.getBalance();//実際の答え
 		assertThat(actual, is(expected));
 
@@ -58,11 +58,11 @@ public class ExamTestATM {
 		
 		MyAccount ma = new MyAccount();
 		ma.setBalance(100000);
-		TestATM ta = new TestATM(ma);
+		CalcATM ta = new CalcATM(ma);
 		
 		int expected = 100000;//答え
 		//計算
-		ta.withdraw(500);
+		ta.withdraw(500,false);
 		int actual = ma.getBalance();//実際の答え
 		assertThat(actual, is(expected));
 
