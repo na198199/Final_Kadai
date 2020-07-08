@@ -1,5 +1,3 @@
-//G18914 小島尚子
-//Mainクラス
 
 package kadai3;
 
