@@ -20,9 +20,9 @@ public class ExamTestATM {
 		ma.setBalance(0);
 		TestATM ta = new TestATM(ma);
 		
-		int expected = 100;
+		int expected = 1000;
 		//計算
-		ta.deposit(100);
+		ta.deposit(1000);
 		int actual = ma.getBalance();
 		assertThat(actual, is(expected));
 	}
@@ -48,6 +48,21 @@ public class ExamTestATM {
 		int expected = 90000;//答え
 		//計算
 		ta.withdraw(10000);
+		int actual = ma.getBalance();//実際の答え
+		assertThat(actual, is(expected));
+
+	}
+	
+	@Test
+	public void TestWithdraw() {
+		
+		MyAccount ma = new MyAccount();
+		ma.setBalance(100000);
+		TestATM ta = new TestATM(ma);
+		
+		int expected = 100000;//答え
+		//計算
+		ta.withdraw(500);
 		int actual = ma.getBalance();//実際の答え
 		assertThat(actual, is(expected));
 
